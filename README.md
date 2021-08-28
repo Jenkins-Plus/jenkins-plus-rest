@@ -3,7 +3,8 @@
     基于 jenkins blue ocean 插件进行rest扩展
 
 ## 文档
-    http://www.jenkins.plus
+
+[http://www.jenkins.plus](http://www.jenkins.plus)
 
 ## 技术选型
     Java
