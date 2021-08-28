@@ -8,7 +8,7 @@
 ## 技术选型
     Java
     jenkins-rest
-    jenins blue ocean plugin
+    jenkins blue ocean plugin
 
 ## 本地构建
     列出本地开发过程中所用到的工具命令；
