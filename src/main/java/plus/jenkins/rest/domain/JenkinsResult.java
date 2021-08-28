@@ -1,0 +1,41 @@
+package plus.jenkins.rest.domain;
+
+import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
+import lombok.Data;
+
+import java.io.Serializable;
+
+/**
+ * description
+ *
+ * @author pengzhenchen 2021/08/19 4:02 下午
+ */
+@Data
+public class JenkinsResult implements Serializable {
+
+    private String status;
+    private JSONObject data;
+
+    public static JenkinsResult of(String res){
+        JSONObject jsonObject = JSONUtil.parseObj(res);
+        String status = jsonObject.getStr("status");
+        JSONObject data = jsonObject.getJSONObject("data");
+        JenkinsResult jenkinsResult = new JenkinsResult();
+        jenkinsResult.setStatus(status);
+        jenkinsResult.setData(data);
+        return jenkinsResult;
+    }
+
+    public boolean failure() {
+        return ObjectUtil.isNull(data)
+                || StrUtil.equalsAnyIgnoreCase("failure", data.getStr("result"));
+    }
+
+    public String jenkinsfile() {
+        return !failure() ? data.getStr("jenkinsfile") : null;
+    }
+
+}
