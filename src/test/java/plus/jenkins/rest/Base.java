@@ -11,6 +11,6 @@ public class Base {
     public static final String LOCAL_CRE = "admin:admin";
 
     public static final String REMOTE_JENKINS = "http://service.jenkins.plus/";
-    public static final String REMOTE_CRE = "admin:9UBvHgHQ9Emr2d7SWXOPbJ";
+    public static final String REMOTE_CRE = "admin:xxx";
 
 }
