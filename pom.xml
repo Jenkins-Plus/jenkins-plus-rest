@@ -14,22 +14,25 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <jenkins-rest.version>0.0.29</jenkins-rest.version>
+        <hutool.version>5.3.9</hutool.version>
+        <lombok.version>1.18.18</lombok.version>
+        <gson.version>2.6.2</gson.version>
+        <guava.version>29.0-jre</guava.version>
     </properties>
     
     <dependencies>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.18</version>
+            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.3.9</version>
+            <version>${hutool.version}</version>
         </dependency>
 
-        <!-- jenkins rest访问-->
+        <!-- jenkins rest api -->
         <dependency>
             <groupId>com.cdancy</groupId>
             <artifactId>jenkins-rest</artifactId>
@@ -38,12 +41,12 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.6.2</version>
+            <version>${gson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>29.0-jre</version>
+            <version>${guava.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

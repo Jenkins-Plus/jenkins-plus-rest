@@ -32,12 +32,23 @@ public interface JenkinsExtendApi {
     @ResponseParser(JenkinsResultParser.class)
     JenkinsResult toJson(@FormParam("jenkinsfile") String jenkinsfile);
 
+
+    /**
+     * 校验json 是否为合法的 jenkins file
+     * @param json
+     * @return
+     */
     @POST
     @Path("pipeline-model-converter/validateJson")
     @Consumes({"application/x-www-form-urlencoded"})
     @ResponseParser(JenkinsResultParser.class)
     JenkinsResult validateJson(@FormParam("json") String json);
 
+    /**
+     * 将json转换成 jenkins file
+     * @param json
+     * @return
+     */
     @POST
     @Path("pipeline-model-converter/toJenkinsfile")
     @Consumes({"application/x-www-form-urlencoded"})
