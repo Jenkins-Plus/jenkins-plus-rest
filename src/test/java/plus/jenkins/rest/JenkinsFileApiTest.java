@@ -10,7 +10,7 @@ import plus.jenkins.rest.domain.JenkinsResult;
  *
  * @author pengzhenchen 2021/08/19 3:41 下午
  */
-public class JenkinsExtendApiTest extends BaseBlueTest{
+public class JenkinsFileApiTest extends BaseBlueTest{
     @Test
     public void toJson(){
         String jenkins = Base64.decodeStr("cGlwZWxpbmUgewogIGFnZW50IGFueQogIHN0YWdlcyB7CiAgICBzdGFnZSgnYnVpbGQnKSB7CiAgICAgIHN0ZXBzIHsKICAgICAgICBzaCAnZWNobyBcJ2hlbGxvIHdvcmxkXCcnCiAgICAgIH0KICAgIH0KCiAgICBzdGFnZSgnc3RlcDInKSB7CiAgICAgIHN0ZXBzIHsKICAgICAgICBzaCAnZWNobyAic3RlcDIiJwogICAgICB9CiAgICB9CgogICAgc3RhZ2UoJ3N0ZXAzJykgewogICAgICBzdGVwcyB7CiAgICAgICAgZWNobyAnc3RlcDMnCiAgICAgIH0KICAgIH0KCiAgICBzdGFnZSgnc3RlcDQnKSB7CiAgICAgIHN0ZXBzIHsKICAgICAgICBzaCAnZWNobyAic3RlcDQiJwogICAgICB9CiAgICB9CgogICAgc3RhZ2UoJ3N0ZXA1JykgewogICAgICBzdGVwcyB7CiAgICAgICAgc2ggJ2VjaG8gInN0ZXA1IicKICAgICAgfQogICAgfQoKICB9Cn0=");

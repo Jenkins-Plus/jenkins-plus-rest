@@ -60,5 +60,5 @@ public interface BlueOceanApi extends Closeable {
      * @return
      */
     @Delegate
-    JenkinsExtendApi jenkinsExtendApi();
+    JenkinsFileApi jenkinsExtendApi();
 }

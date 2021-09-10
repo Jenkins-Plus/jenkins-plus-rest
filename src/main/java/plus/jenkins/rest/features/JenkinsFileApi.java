@@ -18,7 +18,7 @@ import javax.ws.rs.core.MediaType;
 @SuppressWarnings("all")
 @Consumes(MediaType.APPLICATION_JSON)
 @RequestFilters(BlueOceanAuthenticationFilter.class)
-public interface JenkinsExtendApi {
+public interface JenkinsFileApi {
 
 
     /**
