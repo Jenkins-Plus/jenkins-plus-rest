@@ -5,7 +5,6 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
 
@@ -22,7 +21,6 @@ import java.io.Serializable;
  * @author pengzhenchen 2021/08/19 4:02 下午
  */
 @Data
-@Slf4j
 public class JenkinsResult implements Serializable {
 
     private String status;

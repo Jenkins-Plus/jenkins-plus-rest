@@ -29,7 +29,4 @@ public class BlueRun implements BaseDomain {
     private String replayable;
     private String testSummary;
 
-
-
-
 }

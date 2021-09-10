@@ -3,13 +3,11 @@ package plus.jenkins.rest.features;
 import org.jclouds.Fallbacks;
 import org.jclouds.rest.annotations.Fallback;
 import org.jclouds.rest.annotations.RequestFilters;
+import plus.jenkins.rest.domain.run.BlueBuild;
 import plus.jenkins.rest.domain.run.BlueRun;
 import plus.jenkins.rest.filters.BlueOceanAuthenticationFilter;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -29,4 +27,14 @@ public interface BlueRunApi {
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs")
     List<BlueRun> runs(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName);
 
+    @GET
+    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
+    @Path("organizations/{organization}/pipelines/{pipelineName}/runs/{id}")
+    BlueRun runDetails(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName,  @PathParam("id") String id);
+
+    @POST
+    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
+    @Produces({"application/json"})
+    @Path("organizations/{organization}/pipelines/{pipelineName}/runs")
+    BlueBuild build(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName);
 }

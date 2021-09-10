@@ -17,6 +17,6 @@ public class BlueQueueApiTest extends BaseBlueTest{
     public void queue(){
         BlueOceanApi blueOceanApi = client.api();
         List<BlueQueueItem> res = blueOceanApi.queueApi().queue("jenkins","env-test");
-        System.out.println(JSONUtil.toJsonStr(res));
+        System.out.println(JSONUtil.toJsonPrettyStr(res));
     }
 }
