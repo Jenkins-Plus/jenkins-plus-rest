@@ -2,6 +2,7 @@ package plus.jenkins.rest.features;
 
 import org.jclouds.Fallbacks;
 import org.jclouds.rest.annotations.Fallback;
+import org.jclouds.rest.annotations.QueryParams;
 import org.jclouds.rest.annotations.RequestFilters;
 import plus.jenkins.rest.domain.run.BlueBuild;
 import plus.jenkins.rest.domain.run.BlueRun;
@@ -30,6 +31,13 @@ public interface BlueRunApi {
     List<BlueRun> runs(@PathParam("organization") String organization,
                        @PathParam("pipelineName") String pipelineName);
 
+    @GET
+    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
+    @Path("organizations/{organization}/pipelines/{pipelineName}/branches/{branch}/runs")
+    List<BlueRun> runs(@PathParam("organization") String organization,
+                       @PathParam("pipelineName") String pipelineName,
+                       @PathParam("branch") String branch);
+
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
@@ -38,10 +46,22 @@ public interface BlueRunApi {
                        @PathParam("pipelineName") String pipelineName,
                        @PathParam("id") String id);
 
+    @GET
+    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
+    @Path("organizations/{organization}/pipelines/{pipelineName}/branches/{branch}/runs/{id}")
+    BlueRun runDetails(@PathParam("organization") String organization,
+                       @PathParam("pipelineName") String pipelineName,
+                       @PathParam("branch") String branch,
+                       @PathParam("id") String id);
+
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs/{id}/nodes/")
+    @QueryParams(
+            keys = {"limit"},
+            values = {"1000"}
+    )
     List<BlueRunNode> nodes(@PathParam("organization") String organization,
                             @PathParam("pipelineName") String pipelineName,
                             @PathParam("id") String id);
@@ -50,6 +70,10 @@ public interface BlueRunApi {
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
     @Path("organizations/{organization}/pipelines/{pipelineName}/branches/{branch}/runs/{id}/nodes/")
+    @QueryParams(
+            keys = {"limit"},
+            values = {"1000"}
+    )
     List<BlueRunNode> nodes(@PathParam("organization") String organization,
                                      @PathParam("pipelineName") String pipelineName,
                                      @PathParam("branch") String branch,
@@ -80,4 +104,12 @@ public interface BlueRunApi {
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs")
     BlueBuild build(@PathParam("organization") String organization,
                     @PathParam("pipelineName") String pipelineName);
+
+    @POST
+    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
+    @Produces({"application/json"})
+    @Path("organizations/{organization}/pipelines/{pipelineName}/branches/{branch}/runs")
+    BlueBuild build(@PathParam("organization") String organization,
+                    @PathParam("pipelineName") String pipelineName,
+                    @PathParam("branch") String branch);
 }

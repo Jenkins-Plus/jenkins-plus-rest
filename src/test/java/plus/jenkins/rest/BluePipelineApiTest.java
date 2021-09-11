@@ -16,7 +16,8 @@ public class BluePipelineApiTest extends BaseBlueTest{
     @Test
     public void pipeline(){
         BlueOceanApi blueOceanApi = client.api();
-        BluePipeline res = blueOceanApi.pipelineApi().pipeline("jenkins","env-test");
+//        BluePipeline res = blueOceanApi.pipelineApi().pipeline("jenkins","env-test");
+        BluePipeline res = blueOceanApi.pipelineApi().pipeline("jenkins","jenkins-plus-doc");
         System.out.println(JSONUtil.toJsonPrettyStr(res));
     }
 
