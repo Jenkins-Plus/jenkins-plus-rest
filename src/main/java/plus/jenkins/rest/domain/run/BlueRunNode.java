@@ -15,7 +15,6 @@ public class BlueRunNode implements BaseDomain {
     private String  displayDescription;
     private String  displayName;
     private Long    durationInMillis;
-    private String  input;
     private String  result;
     private String  startTime;
     private String  state;

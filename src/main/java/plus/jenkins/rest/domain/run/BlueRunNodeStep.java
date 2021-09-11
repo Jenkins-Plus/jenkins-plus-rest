@@ -14,7 +14,6 @@ public class BlueRunNodeStep implements BaseDomain {
     private String id;
     private String displayDescription;
     private Long durationInMillis;
-    private String input;
     private String result;
     private String startTime;
     private String state;

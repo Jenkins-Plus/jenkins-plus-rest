@@ -27,12 +27,32 @@ public interface BlueLogApi {
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
     @Consumes({"text/plain"})
+    @Path("organizations/{organization}/pipelines/{pipelineName}/branches/{branch}/runs/{id}/nodes/{nodeId}/steps/{stepId}/log/")
+    String stepLog(@PathParam("organization") String organization,
+                   @PathParam("pipelineName") String pipelineName,
+                   @PathParam("branch") String branch,
+                   @PathParam("id") String id,
+                   @PathParam("nodeId") String nodeId,
+                   @PathParam("stepId") String stepId);
+
+    @GET
+    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
+    @Consumes({"text/plain"})
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs/{id}/nodes/{nodeId}/steps/{stepId}/log/")
     String stepLog(@PathParam("organization") String organization,
                    @PathParam("pipelineName") String pipelineName,
                    @PathParam("id") String id,
                    @PathParam("nodeId") String nodeId,
                    @PathParam("stepId") String stepId);
+
+    @GET
+    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
+    @Consumes({"text/plain"})
+    @Path("organizations/{organization}/pipelines/{pipelineName}/branches/{branch}/runs/{id}/log/")
+    String fullLog(@PathParam("organization") String organization,
+                   @PathParam("pipelineName") String pipelineName,
+                   @PathParam("branch") String branch,
+                   @PathParam("id") String id);
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)

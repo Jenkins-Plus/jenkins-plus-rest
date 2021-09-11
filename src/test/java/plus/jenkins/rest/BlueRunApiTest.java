@@ -33,7 +33,7 @@ public class BlueRunApiTest extends BaseBlueTest{
     @Test
     public void nodesForBranch(){
         BlueOceanApi blueOceanApi = client.api();
-        List<BlueRunNode> res = blueOceanApi.runApi().nodesForBranch("jenkins","jenkins-plus-doc","master","5");
+        List<BlueRunNode> res = blueOceanApi.runApi().nodes("jenkins","jenkins-plus-doc","master","5");
         System.out.println(JSONUtil.toJsonPrettyStr(res));
     }
 
