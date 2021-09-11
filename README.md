@@ -23,6 +23,18 @@
     System.out.println(JSONUtil.toJsonStr(res));
     
 ```
+
+## 重点API介绍
+```
+    // 根据组织 获取所有的流水线配置
+    List<BluePipeline> res = blueOceanApi.pipelineApi().pipelines("jenkins");
+    // 获取流水线执行历史
+    List<BlueRun> res = blueOceanApi.runApi().runs("jenkins","env-test");
+    // 根据历史获取流水线执行节点
+    
+    
+```
+
     
 ## 技术选型
     Java

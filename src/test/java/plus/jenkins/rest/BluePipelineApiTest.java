@@ -20,7 +20,6 @@ public class BluePipelineApiTest extends BaseBlueTest{
         System.out.println(JSONUtil.toJsonPrettyStr(res));
     }
 
-
     @Test
     public void pipelines(){
         BlueOceanApi blueOceanApi = client.api();
@@ -28,48 +27,11 @@ public class BluePipelineApiTest extends BaseBlueTest{
         System.out.println(JSONUtil.toJsonPrettyStr(res));
     }
 
-
     @Test
     public void searchPipelines(){
         BlueOceanApi blueOceanApi = client.api();
         List<BluePipeline> res = blueOceanApi.pipelineApi().searhPipelines();
         System.out.println(JSONUtil.toJsonPrettyStr(res));
     }
-
-    @Test
-    public void pipelineParams(){
-        BlueOceanApi blueOceanApi = client.api();
-        BluePipeline res = blueOceanApi.pipelineApi().pipelineParams("jenkins","env-test", "master");
-        System.out.println(JSONUtil.toJsonPrettyStr(res));
-    }
-
-    @Test
-    public void folder(){
-        BlueOceanApi blueOceanApi = client.api();
-        BluePipeline res = blueOceanApi.pipelineApi().folder("jenkins","folder-test");
-        System.out.println(JSONUtil.toJsonPrettyStr(res));
-    }
-
-    @Test
-    public void pipelineNestedFolder(){
-        BlueOceanApi blueOceanApi = client.api();
-        List<BluePipeline> res = blueOceanApi.pipelineApi().pipelineNestedFolder("jenkins","folder-test");
-        System.out.println(JSONUtil.toJsonPrettyStr(res));
-    }
-
-    @Test
-    public void multiBranchPipeline(){
-        BlueOceanApi blueOceanApi = client.api();
-        BluePipeline res = blueOceanApi.pipelineApi().multiBranchPipeline("jenkins","mutiBranch-test");
-        System.out.println(JSONUtil.toJsonPrettyStr(res));
-    }
-
-    @Test
-    public void multiBranchPipelineBranches(){
-        BlueOceanApi blueOceanApi = client.api();
-        List<BluePipeline> res = blueOceanApi.pipelineApi().multiBranchPipelineBranches("jenkins","mutiBranch-test");
-        System.out.println(JSONUtil.toJsonPrettyStr(res));
-    }
-
 
 }

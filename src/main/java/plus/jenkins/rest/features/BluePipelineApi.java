@@ -56,49 +56,4 @@ public interface BluePipelineApi {
     )
     List<BluePipeline> searhPipelines();
 
-    /**
-     * 查询pipeline信息（在多分支管道中的分支或仅pipeline上）
-     * @return
-     */
-    @GET
-    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Path("organizations/{organization}/pipelines/{pipelineName}/branches/(branchName)")    //todo
-    BluePipeline pipelineParams(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName, @PathParam("branchName") String branchName);
-
-    /**
-     * 获取Folder
-     * @return
-     */
-    @GET
-    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Path("organizations/{organization}/pipelines/{folderName}")
-    BluePipeline folder(@PathParam("organization") String organization, @PathParam("folderName") String folderName);
-
-    /**
-     * 查询Folder中的pipeline信息
-     * @return
-     */
-    @GET
-    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Path("organizations/{organization}/pipelines/{folderName}/pipelines")
-    List<BluePipeline> pipelineNestedFolder(@PathParam("organization") String organization, @PathParam("folderName") String folderName);
-
-    /**
-     * 查询MultiBranch pipeline信息
-     * @return
-     */
-    @GET
-    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Path("organizations/{organization}/pipelines/{pipelineName}")
-    BluePipeline multiBranchPipeline(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName);
-
-    /**
-     * 查询MultiBranch pipeline分支信息
-     * @return
-     */
-    @GET
-    @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Path("organizations/{organization}/pipelines/{pipelineName}/branches")
-    List<BluePipeline> multiBranchPipelineBranches(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName);
-
 }

@@ -1,7 +1,10 @@
 package plus.jenkins.rest.domain.run;
 
 import lombok.Data;
+import org.jclouds.json.SerializedNames;
 import plus.jenkins.rest.domain.BaseDomain;
+
+import java.util.List;
 
 /**
  * description
@@ -28,5 +31,6 @@ public class BlueRun implements BaseDomain {
     private String causeOfBlockage;
     private String replayable;
     private String testSummary;
+    private List<BlueRunCause> causes;
 
 }
