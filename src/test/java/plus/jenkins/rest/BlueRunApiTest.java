@@ -4,6 +4,8 @@ import cn.hutool.json.JSONUtil;
 import org.junit.Test;
 import plus.jenkins.rest.domain.run.BlueBuild;
 import plus.jenkins.rest.domain.run.BlueRun;
+import plus.jenkins.rest.domain.run.BlueRunNode;
+import plus.jenkins.rest.domain.run.BlueRunNodeStep;
 
 import java.util.List;
 
@@ -18,6 +20,20 @@ public class BlueRunApiTest extends BaseBlueTest{
     public void runs(){
         BlueOceanApi blueOceanApi = client.api();
         List<BlueRun> res = blueOceanApi.runApi().runs("jenkins","env-test");
+        System.out.println(JSONUtil.toJsonPrettyStr(res));
+    }
+
+    @Test
+    public void nodes(){
+        BlueOceanApi blueOceanApi = client.api();
+        List<BlueRunNode> res = blueOceanApi.runApi().nodes("jenkins","env-test","7");
+        System.out.println(JSONUtil.toJsonPrettyStr(res));
+    }
+
+    @Test
+    public void steps(){
+        BlueOceanApi blueOceanApi = client.api();
+        List<BlueRunNodeStep> res = blueOceanApi.runApi().steps("jenkins","env-test","7","8");
         System.out.println(JSONUtil.toJsonPrettyStr(res));
     }
 

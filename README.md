@@ -28,11 +28,16 @@
 ```
     // 根据组织 获取所有的流水线配置
     List<BluePipeline> res = blueOceanApi.pipelineApi().pipelines("jenkins");
-    // 获取流水线执行历史
+    // 根据流水线名称获取执行历史
     List<BlueRun> res = blueOceanApi.runApi().runs("jenkins","env-test");
-    // 根据历史获取流水线执行节点
-    
-    
+    // 根据runId获取流水线执行节点
+    List<BlueRunNode> res = blueOceanApi.runApi().nodes("jenkins","env-test","7");
+    // 根据runId和nodeId获取该节点的执行步骤steps
+    List<BlueRunNodeStep> res = blueOceanApi.runApi().steps("jenkins","env-test","7","8");
+    // 根据runId和nodeId和stepId获取该步骤的日志
+    String res = blueOceanApi.logApi().stepLog("jenkins","env-test","7","8","9");
+    // 根据runId获取该次执行的完整日志
+    String res = blueOceanApi.logApi().fullLog("jenkins","env-test","7");
 ```
 
     

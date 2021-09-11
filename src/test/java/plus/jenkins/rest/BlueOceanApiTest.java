@@ -10,7 +10,7 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({BlueUserApiTest.class, BluePipelineApiTest.class, BlueOrganizationApiTest.class,
-        BlueQueueApiTest.class, JenkinsFileApiTest.class})
+        BlueQueueApiTest.class, JenkinsFileApiTest.class, BlueLogApiTest.class})
 public class BlueOceanApiTest {
 
 
