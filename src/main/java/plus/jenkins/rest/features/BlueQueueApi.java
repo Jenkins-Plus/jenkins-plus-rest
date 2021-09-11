@@ -29,5 +29,6 @@ public interface BlueQueueApi {
      */
     @GET
     @Path("organizations/{organization}/pipelines/{pipeline}/queue")
-    List<BlueQueueItem> queue(@PathParam("organization") String organization, @PathParam("pipeline") String pipeline);
+    List<BlueQueueItem> queue(@PathParam("organization") String organization,
+                              @PathParam("pipeline") String pipeline);
 }

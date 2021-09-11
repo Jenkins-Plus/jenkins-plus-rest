@@ -32,7 +32,8 @@ public interface BluePipelineApi {
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
     @Path("organizations/{organization}/pipelines/{pipelineName}")
-    BluePipeline pipeline(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName);
+    BluePipeline pipeline(@PathParam("organization") String organization,
+                          @PathParam("pipelineName") String pipelineName);
 
     /**
      * 根据organization 查询pipeline

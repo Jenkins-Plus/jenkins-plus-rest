@@ -27,37 +27,48 @@ public interface BlueRunApi {
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs")
-    List<BlueRun> runs(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName);
+    List<BlueRun> runs(@PathParam("organization") String organization,
+                       @PathParam("pipelineName") String pipelineName);
 
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs/{id}")
-    BlueRun runDetails(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName,  @PathParam("id") String id);
+    BlueRun runDetails(@PathParam("organization") String organization,
+                       @PathParam("pipelineName") String pipelineName,
+                       @PathParam("id") String id);
 
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs/{id}/nodes/")
-    List<BlueRunNode> nodes(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName, @PathParam("id") String id);
+    List<BlueRunNode> nodes(@PathParam("organization") String organization,
+                            @PathParam("pipelineName") String pipelineName,
+                            @PathParam("id") String id);
 
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
     @Path("organizations/{organization}/pipelines/{pipelineName}/branches/{branch}/runs/{id}/nodes/")
-    List<BlueRunNode> nodesForBranch(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName,
-                                     @PathParam("branch") String branch, @PathParam("id") String id);
+    List<BlueRunNode> nodesForBranch(@PathParam("organization") String organization,
+                                     @PathParam("pipelineName") String pipelineName,
+                                     @PathParam("branch") String branch,
+                                     @PathParam("id") String id);
 
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs/{id}/nodes/{nodeId}/steps/")
-    List<BlueRunNodeStep> steps(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName, @PathParam("id") String id, @PathParam("nodeId") String nodeId);
+    List<BlueRunNodeStep> steps(@PathParam("organization") String organization,
+                                @PathParam("pipelineName") String pipelineName,
+                                @PathParam("id") String id,
+                                @PathParam("nodeId") String nodeId);
 
 
     @POST
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
     @Produces({"application/json"})
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs")
-    BlueBuild build(@PathParam("organization") String organization, @PathParam("pipelineName") String pipelineName);
+    BlueBuild build(@PathParam("organization") String organization,
+                    @PathParam("pipelineName") String pipelineName);
 }
