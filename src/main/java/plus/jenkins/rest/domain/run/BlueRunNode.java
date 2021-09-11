@@ -22,6 +22,6 @@ public class BlueRunNode implements BaseDomain {
     private String  type;
     private String  causeOfBlockage;
     private String  firstParent;
-    private String  restartable;
+    private Boolean restartable;
 
 }
