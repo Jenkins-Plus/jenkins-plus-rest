@@ -100,16 +100,19 @@ public interface BlueRunApi {
 
     @POST
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Produces({"application/json"})
+    @Produces({MediaType.APPLICATION_JSON})
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs")
     BlueBuild build(@PathParam("organization") String organization,
                     @PathParam("pipelineName") String pipelineName);
 
     @POST
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Produces({"application/json"})
+    @Produces({MediaType.APPLICATION_JSON})
     @Path("organizations/{organization}/pipelines/{pipelineName}/branches/{branch}/runs")
     BlueBuild build(@PathParam("organization") String organization,
                     @PathParam("pipelineName") String pipelineName,
                     @PathParam("branch") String branch);
+
+
+
 }

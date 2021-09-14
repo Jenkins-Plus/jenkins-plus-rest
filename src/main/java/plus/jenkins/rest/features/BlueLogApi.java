@@ -20,13 +20,13 @@ import java.util.List;
  */
 @Path("/blue/rest")
 @SuppressWarnings("all")
-@Consumes(MediaType.APPLICATION_JSON)
+@Consumes({MediaType.TEXT_PLAIN})
 @RequestFilters(BlueOceanAuthenticationFilter.class)
 public interface BlueLogApi {
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Consumes({"text/plain"})
+    @Consumes({MediaType.TEXT_PLAIN})
     @Path("organizations/{organization}/pipelines/{pipelineName}/branches/{branch}/runs/{id}/nodes/{nodeId}/steps/{stepId}/log/")
     String stepLog(@PathParam("organization") String organization,
                    @PathParam("pipelineName") String pipelineName,
@@ -37,7 +37,7 @@ public interface BlueLogApi {
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Consumes({"text/plain"})
+    @Consumes({MediaType.TEXT_PLAIN})
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs/{id}/nodes/{nodeId}/steps/{stepId}/log/")
     String stepLog(@PathParam("organization") String organization,
                    @PathParam("pipelineName") String pipelineName,
@@ -47,7 +47,7 @@ public interface BlueLogApi {
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Consumes({"text/plain"})
+    @Consumes({MediaType.TEXT_PLAIN})
     @Path("organizations/{organization}/pipelines/{pipelineName}/branches/{branch}/runs/{id}/log/")
     String fullLog(@PathParam("organization") String organization,
                    @PathParam("pipelineName") String pipelineName,
@@ -56,7 +56,7 @@ public interface BlueLogApi {
 
     @GET
     @Fallback(Fallbacks.NullOnNotFoundOr404.class)
-    @Consumes({"text/plain"})
+    @Consumes({MediaType.TEXT_PLAIN})
     @Path("organizations/{organization}/pipelines/{pipelineName}/runs/{id}/log/")
     String fullLog(@PathParam("organization") String organization,
                    @PathParam("pipelineName") String pipelineName,
