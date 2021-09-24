@@ -7,8 +7,6 @@ import plus.jenkins.rest.domain.user.BlueUser;
 
 import java.util.List;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 /**
  * description
  *
