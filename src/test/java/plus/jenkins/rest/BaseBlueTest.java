@@ -3,6 +3,9 @@ package plus.jenkins.rest;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * description
  *
