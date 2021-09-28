@@ -38,7 +38,8 @@
     String res = blueOceanApi.logApi().stepLog("jenkins","env-test","7","8","9");
     // 根据runId获取该次执行的完整日志,如果含有分支，请传入分支名称
     String res = blueOceanApi.logApi().fullLog("jenkins","env-test","7");
-    
+    // TODO 创建目录
+    // TODO 创建流水线
 ```
 
     
